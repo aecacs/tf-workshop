@@ -18,7 +18,7 @@ git clone git@github.com:myGithubUser/tf-workshop.git && cd tf-workshop/
 ```
 
 ### `test_systems.sh`
-This is a convenience wrapper to speed-up `apply`, `plan` and `destroy` operations; it also removes and cleans up nicely to reset the environment. These are the usage details:
+This is a convenience wrapper to speed-up `apply`, `plan` and `destroy` operations; it also removes and cleans-up nicely to reset the environment. These are the usage details:
 
 ```bash
 Description: Build or Destroy systems at will.
@@ -90,7 +90,7 @@ After that, it's time to make improvements and submit pull requests. This thing 
 ***
 
 ## Review
-This is all well and good but, we're still dragging the habits of the old data center into the modern cloud. To remedy that, check back to see Phase 4, a.k.a. - **The _modern approach_ to deployments**. 
+This is all well and good but we're still dragging the habits of the old data center into the modern cloud. To remedy that, check back to see **The _modern approach_ to deployments**. 
 
 The modern approach will decrease complexity, increase security, and make (normally) complex deployments easier than you might think. Stay tuned...
 
