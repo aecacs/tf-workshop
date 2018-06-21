@@ -11,7 +11,7 @@ resource "aws_security_group" "web_sg" {
     protocol  = "tcp"
 
     cidr_blocks = [
-      "${var.myIPAddress}",
+      "0.0.0.0/0",
     ]
   }
 

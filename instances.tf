@@ -19,7 +19,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   # The ssh key used to login to instances;
-  key_name = "master"
+  key_name = "yo"
 
   # Install and Start nginx
   user_data = "${file("scripts/web_bootstrap.sh")}"

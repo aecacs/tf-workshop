@@ -8,11 +8,6 @@ variable "region" {
   default     = "us-west-2"
 }
 
-# Initilize Environment Variables
-variable "myIPAddress" {
-  description = "IP Address of my local gateway."
-}
-
 # -----------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # -----------------------------------------------------------------------------

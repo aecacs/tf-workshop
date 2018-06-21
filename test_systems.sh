@@ -27,6 +27,7 @@
 ###----------------------------------------------------------------------------
 # Variables should be initialized to a default or validated beforehand:
 source ./vars.env
+declare myPlanFile='/tmp/webs.plan'
 verbose=0
 
 
@@ -134,7 +135,6 @@ tf-init() {
 ### Build it!
 ###---
 plan_it() {
-    getCurrentIP
     ###---
     ### Validate the Terraform files (current working directory)
     ###---
@@ -145,8 +145,7 @@ plan_it() {
     ###---
     ### Display the plan
     ###---
-    terraform plan -var "myIPAddress=$currentIPAddress/32" \
-        -out='/tmp/webs.plan'
+    terraform plan -out="$myPlanFile"
     tfCheck
 }
 
@@ -161,11 +160,8 @@ build_it() {
     ### Build it!
     ###---
     terraform apply --auto-approve -no-color \
-        -var "myIPAddress=$currentIPAddress/32" \
-        -input=false '/tmp/webs.plan' 2>&1 | tee /tmp/webs.out
+        -input=false "$myPlanFile" 2>&1 | tee /tmp/webs.out
 
-    terraform apply -var "myIPAddress=$currentIPAddress/32" \
-        -auto-approve -no-color
     if [[ $? -eq '1' ]]; then
         preemie
     else
@@ -179,8 +175,7 @@ build_it() {
 ###---
 destroy_it() {
     date
-    getCurrentIP
-    terraform destroy -force -var "myIPAddress=$currentIPAddress/32"
+    terraform destroy -force
     date
 }
 
