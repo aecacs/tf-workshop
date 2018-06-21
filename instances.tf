@@ -26,7 +26,7 @@ resource "aws_instance" "web" {
 
   # FIXME: subnet_id is brittle; should use a data source
   # URL: https://www.terraform.io/docs/configuration/data-sources.html
-  subnet_id = "subnet-bfd942c6"
+  subnet_id = "subnet-e8fe8d8e"
 
   vpc_security_group_ids = [
     "${aws_security_group.web_sg.id}",
